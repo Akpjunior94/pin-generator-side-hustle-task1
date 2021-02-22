@@ -12,21 +12,23 @@
 <?php   
    
 
-if (isset($_POST["calculate"])) {
+if (isset($_POST["operator"])) {
   $firstNum = $_POST["firstNum"];
   $secondNum = $_POST["secondNum"];
   $operator = $_POST["operator"]; 
   $result = ""; 
   
     # code...
-    if ($operator == '+') {
-       $result = $firstNum + $secondNum;
-    } elseif($operator == '-') {
-       $result = $firstNum - $secondNum;
-    } elseif($operator == '*') {
-       $result = $firstNum * $secondNum;
-    } elseif($operator == '/') {
+    if ($operator == 'addition') {
+      $result = $firstNum + $secondNum;
+    } elseif($operator == 'subtraction') {
+      $result = $firstNum - $secondNum;
+    } elseif($operator == 'multiplication') {
+      $result = $firstNum * $secondNum;
+    } elseif($operator == 'division') {
       $result = $firstNum / $secondNum;
+    } else{
+      echo 'please fill in the blank fields';
     };
   }
   
@@ -35,6 +37,22 @@ if (isset($_POST["calculate"])) {
 
   <h1>Simple Calculator</h1>
   <form action="task2.php" method="post" class="calc-container">
+    First Number<input type="number" name="firstNum" placeholder="Enter First Number">
+    Second Number<input type="number" name="secondNum" placeholder="Enter Second Number">
+      Result
+      <input type="number" value="<?= $result?>" class="result-width">
+    </div>
+    <div>
+      <input type="submit" name="operator" value="addition">
+      <input type="submit" name="operator" value="subtraction">
+      <input type="submit" name="operator" value="multiplication">
+      <input type="submit" name="operator" value="division">
+    </div>
+  </form>
+
+
+  <!-- Another Method -->
+  <!-- <form action="task2.php" method="post" class="calc-container">
     First Number<input type="number" name="firstNum">
     <select name="operator">
       <option>+</option>
@@ -48,7 +66,7 @@ if (isset($_POST["calculate"])) {
       Result
       <input type="number" value="<?= $result?>" class="result-width">
     </div>
-  </form>
+  </form> -->
 
 
   

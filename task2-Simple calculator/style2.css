@@ -22,6 +22,10 @@ input{
   margin-bottom: 10px;
 }
 
+::placeholder {
+  color: rgb(173, 177, 180);
+}
+
 input:hover {
   border-color: rgb(129, 141, 129);
 }
