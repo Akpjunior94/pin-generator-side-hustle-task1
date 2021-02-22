@@ -28,12 +28,12 @@ function rechargePin() {
 
 ?>
 
-<h1>Recharge Card Generator</h1>
-<p>A click of the button generates 200 recharge pin</p>
+  <h1>Recharge Card Generator</h1>
+  <p>A click of the button generates 200 recharge pin</p>
 
-<div class="container">
-  <input type="submit" name="rechargePin" class="button" value="Generate Pin" onclick="document.write('<?php rechargePin() ?>')" />  
-</div>
+  <div class="container">
+    <input type="submit" name="rechargePin" class="button" value="Generate Pin" onclick="document.write('<?php rechargePin() ?>')" />  
+  </div>
   
 </body>
 </html>
