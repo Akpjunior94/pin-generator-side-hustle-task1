@@ -10,7 +10,9 @@
 <body>
 
 <?php   
-   
+  $error = "";
+  $firstNum = "";
+  $secondNum ="";
 
 if (isset($_POST["operator"])) {
   $firstNum = $_POST["firstNum"];
@@ -28,7 +30,7 @@ if (isset($_POST["operator"])) {
     } elseif($operator == 'division') {
       $result = $firstNum / $secondNum;
     } else{
-      echo 'please fill in the blank fields';
+      $error = 'please fill in the blank fields';
     };
   }
   
@@ -37,8 +39,8 @@ if (isset($_POST["operator"])) {
 
   <h1>Simple Calculator</h1>
   <form action="task2.php" method="post" class="calc-container">
-    First Number<input type="number" name="firstNum" placeholder="Enter First Number">
-    Second Number<input type="number" name="secondNum" placeholder="Enter Second Number">
+    First Number<input type="number" name="firstNum" placeholder="Enter First Number" required>
+    Second Number<input type="number" name="secondNum" placeholder="Enter Second Number" required>
       Result
       <input type="number" value="<?= $result?>" class="result-width">
     </div>
